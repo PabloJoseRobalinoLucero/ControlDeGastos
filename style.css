@@ -38,7 +38,7 @@ body {
 
     & button {
         margin-top: 2vh;
-        width: 50%;
+        width: 39%;
     }
 }
 
@@ -54,6 +54,13 @@ input {
     &:focus {
         outline: none;
     }
+}
+
+.botones {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1.4vw;
 }
 
 button {
@@ -86,6 +93,10 @@ table {
 
     & .valor {
         width: 15%;
+    }
+    
+    & .accion {
+        width: 20%;
     }
 
     & th {

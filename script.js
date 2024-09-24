@@ -1,4 +1,5 @@
 let gastos = []
+let modificando = 0
 
 const listaGastos = document.getElementById("listaGastos")
 const totalValor = document.getElementById("totalGastos")
@@ -29,6 +30,9 @@ function actualizarListaGastos() {
                             <button onclick="eliminarGasto(${index})">
                                 <img src="./assets/trash.svg" alt="eliminar">
                             </button>
+                            <button onclick="clickModificar(${index})">
+                                <img src="./assets/pencil.svg" alt="eliminar">
+                            </button>
                         </td>
                     </tr>`
         totalGastos += Number(gasto[1])
@@ -48,4 +52,23 @@ function limpiar() {
 function eliminarGasto(index) {
     gastos.splice(index, 1)
     actualizarListaGastos()
+}
+
+function clickModificar(index) {
+    document.getElementById("nombreGasto").value = gastos[index][0]
+    document.getElementById("valorGasto").value = gastos[index][1]
+    document.getElementById("descripcionGasto").value = gastos[index][2]
+    modificando = index
+}
+
+function modificar() {
+    if (modificando !== 0) {
+        gastos[modificando][0] = document.getElementById("nombreGasto").value
+        gastos[modificando][1] = document.getElementById("valorGasto").value
+        gastos[modificando][2] = document.getElementById("descripcionGasto").value
+        actualizarListaGastos()
+        modificando = 0
+    } else {
+        alert("No hay ningún gasto seleccionado para modificar.")
+    }
 }

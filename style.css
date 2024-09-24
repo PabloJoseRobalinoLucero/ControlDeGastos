@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%); 
+    height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    width: 75vw;
+    border: #2487ff 2px solid;
+    border-radius: 5vh;
+    padding: 5vh;
+    background: rgba(108, 137, 255, 0.1) ;
+}
+
+.titulo {
+    text-align: center;
+
+    & h2 {
+        color: #1875E8;
+    }
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & button {
+        margin-top: 2vh;
+        width: 50%;
+    }
+}
+
+input {
+    border-radius: 5vh;
+    height: 5vh;
+    color: black;
+    padding: 0 2vh;
+    border: 0;
+    width: 80%;
+    margin: 2vh 0 0 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    background: #1875E8;
+    border-radius: 5vh;
+    font-weight: bold;
+    border: 0;
+    cursor: pointer;
+    height: 5vh;
+}
+
+.total {
+    text-align: center;
+    margin-top: 2vh;
+}
+
+#listaGastos {
+    list-style: none;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 2vh;
+    border-radius: 5vh;
+    & li {
+        padding: 1vh 5vh 0 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        & button {
+            padding: 0 2vw;
+        }
+    }
+    & li:last-child {
+        padding-bottom: 1vh;
+    }
+
+}

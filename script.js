@@ -1,5 +1,5 @@
 let gastos = []
-let modificando = 0
+let modificando = -1
 
 const listaGastos = document.getElementById("listaGastos")
 const totalValor = document.getElementById("totalGastos")
@@ -62,12 +62,12 @@ function clickModificar(index) {
 }
 
 function modificar() {
-    if (modificando !== 0) {
+    if (modificando !== -1) {
         gastos[modificando][0] = document.getElementById("nombreGasto").value
         gastos[modificando][1] = document.getElementById("valorGasto").value
         gastos[modificando][2] = document.getElementById("descripcionGasto").value
         actualizarListaGastos()
-        modificando = 0
+        modificando = -1
     } else {
         alert("No hay ningún gasto seleccionado para modificar.")
     }

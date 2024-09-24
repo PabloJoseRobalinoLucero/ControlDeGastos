@@ -9,6 +9,9 @@ function agregar() {
 
     gastos.push([nombreGasto,valorGasto])
     actualizarListaGastos()
+    if (valorGasto > 150) {
+        alert("Tu gasto está superando los $150")
+    }
 }
 
 function actualizarListaGastos() {

@@ -6,8 +6,9 @@ const totalValor = document.getElementById("totalGastos")
 function agregar() {
     let nombreGasto = document.getElementById("nombreGasto").value
     let valorGasto = document.getElementById("valorGasto").value
+    let descripcionGasto = document.getElementById("descripcionGasto").value
 
-    gastos.push([nombreGasto,valorGasto])
+    gastos.push([nombreGasto,valorGasto,descripcionGasto])
     actualizarListaGastos()
     if (valorGasto > 150) {
         alert("Tu gasto está superando los $150")
@@ -20,9 +21,16 @@ function actualizarListaGastos() {
 
     gastos.forEach((gasto, index) => {
         const valorGasto = Number(gasto[1]).toFixed(2)
-        htmlLista += `<li>${gasto[0]}: $${valorGasto}
-                        <button onclick="eliminarGasto(${index})">Eliminar</button>
-                    </li>`
+        htmlLista += `<tr>
+                        <td>${gasto[0]}</td>
+                        <td class="valor">$${valorGasto}</td>
+                        <td>${gasto[2]}</td>
+                        <td>
+                            <button onclick="eliminarGasto(${index})">
+                                <img src="./assets/trash.svg" alt="eliminar">
+                            </button>
+                        </td>
+                    </tr>`
         totalGastos += Number(gasto[1])
     })
     
@@ -34,6 +42,7 @@ function actualizarListaGastos() {
 function limpiar() {
     document.getElementById("nombreGasto").value = ""
     document.getElementById("valorGasto").value = ""
+    document.getElementById("descripcionGasto").value = ""
 }
 
 function eliminarGasto(index) {

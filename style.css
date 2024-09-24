@@ -70,23 +70,49 @@ button {
     margin-top: 2vh;
 }
 
-#listaGastos {
-    list-style: none;
+.tabla {
+    border-radius: 5vh;
     background: rgba(0, 0, 0, 0.2);
     margin-top: 2vh;
-    border-radius: 5vh;
-    & li {
-        padding: 1vh 5vh 0 5vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        
-        & button {
-            padding: 0 2vw;
-        }
-    }
-    & li:last-child {
-        padding-bottom: 1vh;
+    overflow: hidden;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    border-color: inherit;
+    width: 100%;
+    text-align: left;
+
+    & .valor {
+        width: 15%;
     }
 
+    & th {
+        font-weight: bold;
+        padding: 2vh 2vw;
+        background: rgba(200, 200, 200, 0.3);
+    }
+
+    & td {
+        border-bottom: 1px solid white;
+        padding: 1vh 2vw;
+    }
+
+    & tr:first-child td {
+        border-top: 2px solid white;
+    }
+
+    & tr:last-child td {
+        border-bottom: none;
+        padding: 1vh 2vw 2vh 2vw;
+    }
+
+    & tbody tr:nth-child(even) td {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    & button {
+        padding: 0 1vw;
+    }
 }

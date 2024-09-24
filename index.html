@@ -17,9 +17,22 @@
             <div class="formulario">
                 <input type="text" placeholder="Nombre del Gasto" id="nombreGasto" />
                 <input type="number" step="0.01" min="0" placeholder="Valor del Gasto" id="valorGasto" />
+                <input type="text" placeholder="Descripción del Gasto" id="descripcionGasto" />
                 <button onclick="agregar()">Agregar Gasto</button>
             </div>
-            <ul id="listaGastos"></ul>
+            <div class="tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</t>
+                            <th class="valor">Valor</th>
+                            <th>Descripción</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaGastos"></tbody>
+                </table>
+            </div>
         </div>
         <div class="total">
             <h3>Total Mensual: US$ <span id="totalGastos">0.00</span></h3>

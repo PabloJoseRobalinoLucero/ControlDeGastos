@@ -1,5 +1,5 @@
-let listaNombresGastos = []
-let listaValoresGastos = []
+let gastos = []
+
 const listaGastos = document.getElementById("listaGastos")
 const totalValor = document.getElementById("totalGastos")
 
@@ -7,22 +7,20 @@ function agregar() {
     let nombreGasto = document.getElementById("nombreGasto").value
     let valorGasto = document.getElementById("valorGasto").value
 
-    listaNombresGastos.push(nombreGasto)
-    listaValoresGastos.push(valorGasto)
+    gastos.push([nombreGasto,valorGasto])
     actualizarListaGastos()
-    
 }
 
 function actualizarListaGastos() {
     let htmlLista = ""
     let totalGastos = 0
 
-    listaNombresGastos.forEach((nombre, index) => {
-        const valorGasto = Number(listaValoresGastos[index]).toFixed(2)
-        htmlLista += `<li>${nombre}: $${valorGasto}
+    gastos.forEach((gasto, index) => {
+        const valorGasto = Number(gasto[1]).toFixed(2)
+        htmlLista += `<li>${gasto[0]}: $${valorGasto}
                         <button onclick="eliminarGasto(${index})">Eliminar</button>
                     </li>`
-        totalGastos += Number(listaValoresGastos[index])
+        totalGastos += Number(gasto[1])
     })
     
     listaGastos.innerHTML = htmlLista
@@ -36,7 +34,6 @@ function limpiar() {
 }
 
 function eliminarGasto(index) {
-    listaNombresGastos.splice(index, 1)
-    listaValoresGastos.splice(index, 1)
+    gastos.splice(index, 1)
     actualizarListaGastos()
 }
